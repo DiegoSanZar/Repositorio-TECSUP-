@@ -1,0 +1,5 @@
+/* "*" es un selector para todos los elementos */
+*{
+    border:1px solid red
+}
+header

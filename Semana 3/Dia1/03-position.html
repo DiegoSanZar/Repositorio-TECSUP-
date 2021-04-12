@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        /* 1. position */
+        .papa{
+            width: 500px;
+            height: 1500px;
+            border:1px solid rebeccapurple;
+            margin-top: 30px;
+            position: relative; 
+        }
+        .hijo{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 1px solid red;
+        }
+        /* caja 1 no la tocamos */
+        .caja2{
+            /* cundo solo pongo absolute con referencias a las direcciones (top, left, bottom, right) va a asumir como referencia la posicion del body */
+            position: absolute;
+            background-color: seagreen;
+            color: seashell;
+            top: 40px;
+            left: 20px;
+        }
+        .caja3{
+            position: relative;
+            z-index: 2;
+            background-color: salmon;
+        }
+        .caja4{
+            /* va a tomar como referencia al navegador y no se va a mover por mucho que naveguemos */
+            position: fixed;
+            bottom: 25px;
+            right: 45px;
+
+            background-color: sienna;
+            color: springgreen;
+
+        }
+    </style>>
+</head>
+<body>
+    <section class="papa">
+        <div class="hijo caja1">cajita</div>
+        <div class="hijo caja2">cajita</div>
+        <div class="hijo caja3">cajita</div>
+        <div class="hijo caja4">cajita</div>
+    </section>
+</body>
+</html>

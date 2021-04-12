@@ -1,0 +1,15 @@
+h1{
+    font-weight: bolder;
+    padding: 10px;
+}
+/* .nomre_clase */
+.azul{
+    background-color: brown;
+    color:burlywood;
+}
+/* #nombre_id */
+/* ids = 01 solo */
+#footer1{
+    padding: 10px;
+    background-color: coral;
+}

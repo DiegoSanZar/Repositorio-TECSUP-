@@ -1,0 +1,36 @@
+article, h1{
+    background-color: steelblue;
+}
+/* todos los hijos (article) que tengan los section A CUALQUIER NIVEL */
+section article{
+    color: springgreen;
+}
+/* al indicar > solamente utilizo los primeros hijos LI dentro de OL  */
+ol > li{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rebeccapurple;
+}
+p:last-child{
+    border: 2px solid orange;
+}
+/* impar */
+tr:nth-child(add){
+    background-color: orchid;
+}
+/* par  */
+tr:nth-child(even){
+    background-color: palegoldenrod;
+}
+/* clases para tablas */
+table, th, td{
+    border: 2px solid red;
+    /* remover espacio entre celdas */
+    border-collapse: collapse;
+    /* centrar horizontal  */
+    margin: 0 auto;
+}
+
+tr:nth-child(3), tr:nth-child(4){
+    background-color: seagreen;
+}
+/* Pseudoelementos */

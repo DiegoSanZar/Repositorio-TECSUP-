@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+            /* que el tamaño de ancho y alto que indiquemos sea tal cual  */
+            box-sizing: border-box;
+            border: 1px solid gray;
+        }
+        .menu{
+            width: 100%;
+            height: 500px;
+            background-color: lightblue;
+            display: flex;
+            /* me indica la dirección de mis elementos hijos */
+            flex-direction: row;
+            /* me permite alinear de forma horizonta  */
+            justify-content: space-around;
+            /* space-around
+                space-evenly
+                space-between
+                center */
+            /* alisg-items me permite alinear de forma vertical */
+            align-items: center;
+
+        }
+        .link{
+            background-color: lightsalmon;
+            height: 75px;
+            padding: 10px;
+            width: 200px;
+        }
+        /* cuanto puede crecer un elemento segun el espacio libre */
+        .link3{
+            flex-grow: 3; 
+        }
+        /* cuanto se puede encoger un elemento */
+        .link6{
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- vamos a simular que es una barra de navegación  -->
+    <nav class="menu">
+        <div class="link">link1</div>
+        <div class="link">link2</div>
+        <div class="link link3">link3</div>
+        <div class="link">link4</div>
+        <div class="link">link5</div>
+        <div class="link link6">link6</div>
+    </nav>
+</body>
+</html>
