@@ -18,3 +18,16 @@ main{
 h3{
     align-items: center;
 }
+.sub{
+    background: brown;
+}
+main section{
+    border: solid rgb(0, 0, 0);
+    margin: 3px;
+    padding: 8px;
+}
+h3{
+    display: flex;
+    align-items: unset;
+    justify-content: center;
+}
