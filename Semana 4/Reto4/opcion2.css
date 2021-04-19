@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.contenedor{
+    margin: 0  auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(6, 200px);
+    gap: 12px;
+}
+.caja{
+    background-color: lightgray;
+    box-shadow: black;
+}
+.caja:nth-of-type(1){
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    background-image: url(./img_ropa/zapatilla.png);
+}
+.caja:nth-of-type(5){
+    grid-column: 2 / 4;
+    grid-row: 3 / 5;
+}
+.caja:nth-of-type(7){
+    grid-column: 1 / 3;
+    grid-row: 5 / 7;
+}
