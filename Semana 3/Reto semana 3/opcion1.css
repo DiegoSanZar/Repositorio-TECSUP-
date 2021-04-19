@@ -22,12 +22,15 @@ h3{
     background: brown;
 }
 main section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     border: solid rgb(0, 0, 0);
     margin: 3px;
     padding: 8px;
 }
-h3{
+/* h3{
     display: flex;
     align-items: unset;
     justify-content: center;
-}
+} */

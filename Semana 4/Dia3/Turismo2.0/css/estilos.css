@@ -77,7 +77,10 @@ header{
 .header-content >h1{
     font-family: 'Playfair Display', sans-serif;
     font-weight: 700;
-    font-size: 64px;
+    /* font-size: 4vw; */
+    /* calc(Valormin +( valormax - Valormin)*((100vw - espacio_costados)/(contenido - espacio_costados))) */
+    font-size: calc(24px + (48 - 24)*((100vw - 300px) / (1000-300)));
+
 }
 .header-content > small{
     font-family: 'Open Sans', sans-serif;
@@ -148,4 +151,79 @@ header{
   font-family: 'Open Sans', serif;
 /* colocar los valores en los sentidos de la aguja del reloj */
   border-radius: 0 6px 0 0;
+}
+.place > h4{ 
+    font-size: 16px;
+}
+
+/* menu */
+.show-menu-btn, .hide-menu-btn{
+    cursor: pointer;
+    font-size: 30px;
+    display:none;
+}
+#check{
+    /* para esconder el checkbox */
+    position: absolute;
+    visibility: hidden;
+    z-index: -99;
+}
+/* @media screen and (condicional){aqui iran los selectores como si se tratara por cada @mediaquery como si fuera una hoja css adicional */
+@media screen and (max-width:600px){
+    header{
+        /* aquie estilos nuevos de header para 600px */
+        flex-direction: column;
+        align-items: center;
+    }
+    .header-content, .header-img{
+        width: 100%;
+    }
+
+    /* cards */
+    .cards{
+        flex-direction: column;
+    }
+    .card{
+        width: 100%;
+        height: 300px;
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+    .card > img{
+        width: 100%;
+    }
+    /* menu */
+    .menu{
+        position: fixed;
+        width: 100%;
+        /* viewport height al 100% toda la pantalla */
+        height: 100vh; 
+        background: darkturquoise;
+        top: 0;
+        right:-100%;
+        text-align: center;
+        padding: 100px 0;
+    }
+    .menu{
+        flex-direction: column;
+    }
+
+    .menu > li{
+        padding: 20px;
+    }
+
+    .hide-menu-btn{
+        position:absolute;
+        top:40px;
+        right:40px;
+    }
+
+    .hide-menu-btn, .show-menu-btn{
+        display: block;
+    }
+    /* checked verifica si esta con aspita el elemento de tipo checkbox */
+    /* ~ este simbolo hace referencia a los elementos que esten despues de #check en la estructura, en este caso menu */
+    #check:checked ~ .menu{
+        right: 0;
+    }
 }

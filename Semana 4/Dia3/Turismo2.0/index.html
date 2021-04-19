@@ -7,18 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
     <div class="container">
         <nav>
             <img src="./assets/img/logo.png" alt="logo">
-            <ul>
+            <input type="checkbox" id="check">
+
+            <label for="check" class="show-menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            
+            <ul class="menu">
                 <li><a href="">item 1</a></li>
                 <li><a href="">item 2</a></li>
                 <li><a href="">item 3</a></li>
                 <li><a href="">item 4</a></li>
                 <li><button id="btn-login">Login</button></li>
                 <li><button id="btn-register">Registro</button></li>
+                <li><label for="check" class="hiden-menu-btn">
+                    <i class="fas fa-times"></i>
+                     </label></li>
             </ul>
         </nav>
         <header>

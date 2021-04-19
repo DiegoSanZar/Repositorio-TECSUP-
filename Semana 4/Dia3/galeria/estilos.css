@@ -1,0 +1,44 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor{
+    padding: 50px;
+    min-width: 700px;
+    max-width: 1000px;
+    min-height: 1000px;
+    /* centrar el contenedor */
+    margin: 0 auto;
+    /* GRID */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: repeat(4, minmax(150px, 1fr));
+    gap:10px;
+}
+.caja{
+    background: #eee;
+    /* body por defecto del texto 16px, este caso 3rem = 48px */
+    font-size: 3rem;
+    color: white;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+.caja:hover{
+    box-shadow: 4px 4px 4px gray;
+}
+/* aqui ya vamos a modificar los elementos hijos */
+
+.caja:nth-of-type(1){
+    grid-column:1 / 3;
+    grid-row:1 / 3;
+    /* background.image: url(esta puede ser http:// o de mis archivos */
+    background-image: url(./img/tile1.jpg);
+}

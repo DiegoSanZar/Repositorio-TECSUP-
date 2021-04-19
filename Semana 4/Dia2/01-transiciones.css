@@ -1,0 +1,30 @@
+.cuadrado{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    background: palegreen;
+
+    /* Propiedades de transición */
+    transition-duration: 2s;
+    transition-delay: 2000ms;
+    transition-property: all;
+    /* es la forma en como se va a ejecutar la transformación */
+    transition-timing-function: ease;
+    /* transition: all 1s 250ms ease; */
+}
+
+/* hover va a reconocer cuando el puntero este encima del elemento al que se este aplicando */
+.cuadrado:hover{
+    width: 300px;
+    height: 300px;
+    background-color: tomato;
+    border-radius: 50%;
+    /* transform */
+    /* scale(x,y) */
+    /* transform:scale(2,2); */
+    /* transform: translate(100px,200px); */
+    /* transform: skewX(45deg); */
+    transform: skewY(45deg);
+    /* box-shadow; sombraEjeX sombraEjeY difuminado color */
+    box-shadow: 4px 4px 4px black;
+}
