@@ -24,6 +24,28 @@ else if(anio % 4 === 0 && anio % 100 !== 0){
 }
 
 //Inventarios
+/**
+ * Una bodeha quiere hacer un inventario, actualmente tiene 03 tipos de productos, papitas, jabones y chocolate
+ * queremos saber cuantos productos tiene en existencia
+ */
+/**
+ * Descomposición
+ * Reglas: Manejamos 3 productos
+ * Cada Producto tendrá su cantidad al final
+ * Tendremos que preguntar producto por producto
+ * -Que datos o variables deberiamos tener?
+ * 1. variables para c/producto
+ * 2. cantidad de productos en general
+ */
+
+//Patrones
+//Que tarea va a ser repetitiva?
+//Contar los productos
+
+//Diseño del Algoritmo
+//1.Cuantos productos se van a contar, pedir al usuario
+//2. Que producto estamos contando
+//3. Si un producto pertenece a un tipo, aumentar su cantidad
 let cantProductos = +prompt("Cuantos productos contaras?")
 
 let papitas = 0
