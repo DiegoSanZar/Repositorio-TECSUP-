@@ -1,0 +1,61 @@
+//variables 
+// $color-primario: #F87575;
+// $color-secundario: #77685D;
+// $tamanio-titulo: 48px;
+// $importante:true;
+// puedo importar el codigo de otro archivo scss pero este debe tener el _ delante del nombre. lo llamo solo por su nombre.
+@import "_variables";
+h1{
+    color: $color-primario;
+    font-size: $tamanio-titulo;
+    //uso de boleanos
+
+    @if $importante{
+        background-color: $color-secundario;
+    }
+}
+
+//mixins
+@mixin padding($valor,$bg,$color-texto){
+    padding: $valor;
+    background-color: $bg;
+    color:$color-texto;
+}
+.boton{
+    @include padding(20px,blue,white);
+}
+
+@mixin flexComponent($direccion:row,$centrar:false) {
+    flex-direction: $direccion;
+    display: flex;
+    @if $centrar{
+        justify-content: center;
+    }@else{
+        justify-content: space-between;
+    }
+}
+.resumenes{
+    @include flexComponent(row,true);
+}
+
+.menu{
+    max-width: 500px;
+    background-color: $color-secundario;
+
+    .menu__lista{
+        list-style: none;
+        height: 50px;
+        @include flexComponent(row,false);
+
+        .menu__item{
+            margin-top: 10px;
+
+            .menu__link{
+                color: white;
+            }
+            &:hover{
+                background-color: grey;
+            }
+        }
+    }
+}
