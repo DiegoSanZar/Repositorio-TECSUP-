@@ -1,10 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import react from 'react'
+import {Switch, BrowserRouter as Router} from "react-router-dom"
+import NavTop from './components/NavTop'
+import Routes from './Routes'
 import ListarAlumnos from './views/ListarAlumnos'
 
 function App() {
   return (
-    <ListarAlumnos></ListarAlumnos>
+    <Router>
+      <NavTop></NavTop>
+      <Switch>
+        <Routes/>
+      </Switch>
+    </Router>
   );
 }
 
