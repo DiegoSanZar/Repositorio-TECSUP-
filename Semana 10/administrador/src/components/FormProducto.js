@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 
+//esta variable me va a permitir manejar mi archivo sin problemas
+let imagen
 
 function FormProducto({value, actualizarInput, setValue, manejarSubmit, categorias}) {
 
@@ -18,14 +20,20 @@ function FormProducto({value, actualizarInput, setValue, manejarSubmit, categori
 
     const anadirFoto = (e) =>{
         e.preventDefault()
-        let nuevaFoto = inputFotos.current.value
-        setValue({...value, fotos:[...value.fotos, nuevaFoto]})
+
+        // let nuevaFoto = inputFotos.current.value
+        // setValue({...value, fotos:[...value.fotos, nuevaFoto]})
     }
 
     // useEffect(() =>{
     //     setValue({...value, colores:colores})
     // }, [colores])
 
+    const manejarImagen = (e) => {
+        e.preventDefault()
+        let misImagen = e.target.files[0]
+
+    }
 
     return (
         <div>
@@ -94,9 +102,11 @@ function FormProducto({value, actualizarInput, setValue, manejarSubmit, categori
                 <div className="mb-3">
                     <label className="form-label">Fotos</label>
                     <input
-                        type="text"
+                        type="file"
                         ref={inputFotos}
                         className="form-control" 
+                        onChange={(e) =>{manejarImagen(e)}}
+                        multiple
                     />
                     <button className="btn btn-primary btn-sm" onClick={(e) =>{anadirFoto(e)}}>
                         Agregar Foto
