@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {obtenerAlumnos} from '../services/alumnoService'
 
-function ListarAlumnos() {
+function ListarAlumnos(){
 
     const getAlumnos = async() =>{
         try{
