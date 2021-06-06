@@ -44,9 +44,22 @@ const actualizarAlumno = async(alumnoEditado, id) => {
     }
 }
 
+const loggingAlumno = async(usuario, contrasenia) => {
+    try{
+        const alumnosObtenidos = obtenerAlumnos()
+        alumnosObtenidos.filter((alumno)=>{
+            return alumno.usuario == usuario && alumno.contrasenia == contrasenia
+        })
+        return alumnosObtenidos
+    }catch(error){
+        console.log(error)
+    }
+}
+
 export {
     creaAlumno,
     obtenerAlumnoPorId,
     actualizarAlumno,
-    obtenerAlumnos
+    obtenerAlumnos,
+    loggingAlumno
 }
