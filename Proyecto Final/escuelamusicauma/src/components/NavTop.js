@@ -1,29 +1,42 @@
 import React, {useState} from 'react'
 import {Link} from "react-router-dom" 
+import logo from "../resources/img/uma_logo.jpg"
 
 function NavTop() {
     const [estaColapsado, setEstaColapsado] = useState(true)
     const manejarNavbar = () => setEstaColapsado(!estaColapsado)
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">Navbar</a>
+        <nav className="navbar navbar-expand-lg navbar-light bg-white">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <img src={logo} alt="Logo" className="navbar-brand-img" style={{width:"150px",height:"150px"}}></img>
+          </a>  
+
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded={!estaColapsado ? true : false} onClick={manejarNavbar} aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className={`${estaColapsado ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
+
+          <div className={`${estaColapsado ? 'collapse' : ''} navbar-collapse`} id="navbarCollapse">
+            <ul className="navbar-nav ">
+              <li className="nav-item p-3">
+                <a className="nav-link" href="#">Inicio</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Features</a>
+              <li className="nav-item p-3">
+                <Link className="nav-link" to="/carrito">Eventos</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/carrito">Ir a Carrito</Link>
-              </li>
+              <li className="nav-item p-3">
+                <Link className="nav-link" to="/carrito">Nosotros</Link>
+              </li>              
+              <li className="nav-item p-3">
+                <Link className="nav-link" to="/carrito">Clases</Link>
+              </li>              
+              <li className="nav-item p-3">
+                <Link className="nav-link" to="/carrito">Contactenos</Link>
+              </li> 
             </ul>
+            <a className="navbar-btn btn btn-sm btn-primary lift ms-auto p-2" href="#">Iniciar Sesión</a>
+
           </div>
         </div>
       </nav>

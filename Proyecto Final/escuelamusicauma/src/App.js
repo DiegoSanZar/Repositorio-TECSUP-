@@ -7,7 +7,6 @@ import ListarAlumnos from './views/ListarAlumnos'
 function App() {
   return (
     <Router>
-      <NavTop></NavTop>
       <Switch>
         <Routes/>
       </Switch>
