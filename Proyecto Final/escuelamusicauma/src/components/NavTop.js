@@ -35,7 +35,7 @@ function NavTop() {
                 <Link className="nav-link" to="/carrito">Contactenos</Link>
               </li> 
             </ul>
-            <a className="navbar-btn btn btn-sm btn-primary lift ms-auto p-2" href="#">Iniciar Sesión</a>
+            <Link className="navbar-btn btn btn-sm btn-primary lift ms-auto p-2" to="/usuario">Iniciar Sesión</Link>
 
           </div>
         </div>
