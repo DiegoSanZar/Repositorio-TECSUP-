@@ -30,7 +30,8 @@ function LoggeoAlumno() {
                 </div>
                 </form>
             <button className="btn btn-primary">Ingresar</button>
-
+            <hr/>
+            <span style={{color:'blue'}}>Olvide mi contraseña</span>
         </div>
     )
 }
