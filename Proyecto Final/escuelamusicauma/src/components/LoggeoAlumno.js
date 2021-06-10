@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom" 
 import loggingAlumno from "../services/alumnoService"
 
 
@@ -29,7 +30,7 @@ function LoggeoAlumno() {
                         />
                 </div>
                 </form>
-            <button className="btn btn-primary">Ingresar</button>
+            <Link className="btn btn-primary" to="/inicioSesion">Ingresar</Link>
 
         </div>
     )
