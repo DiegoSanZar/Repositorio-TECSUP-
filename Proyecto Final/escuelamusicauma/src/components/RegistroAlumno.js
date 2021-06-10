@@ -7,7 +7,7 @@ function RegistroAlumno() {
             <div className="container d-flex justify-content-between">
                 <form>
                 <div className="mb-3">
-                    <label className="form-label">Nombres:</label>
+                    <label className="form-label fw-bold">Nombres:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -15,7 +15,7 @@ function RegistroAlumno() {
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Apellido Paterno:</label>
+                    <label className="form-label fw-bold">Apellido Paterno:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -23,7 +23,7 @@ function RegistroAlumno() {
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Apellido Materno:</label>
+                    <label className="form-label fw-bold">Apellido Materno:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -31,7 +31,7 @@ function RegistroAlumno() {
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">email:</label>
+                    <label className="form-label fw-bold">email:</label>
                     <input
                         type="email"
                         className="form-control"
@@ -39,14 +39,14 @@ function RegistroAlumno() {
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Fecha Nacimiento:</label>
+                    <label className="form-label fw-bold">Fecha Nacimiento:</label>
                     <input
                         type="date"
                         className="form-control"
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Padre o Apoderado:</label>
+                    <label className="form-label fw-bold">Padre o Apoderado:</label>
                     <input
                         type="text"
                         className="form-control"
@@ -56,21 +56,21 @@ function RegistroAlumno() {
                 </form> 
                 <form>
                 <div className="mb-3">
-                    <label className="form-label">Usuario:</label>
+                    <label className="form-label fw-bold">Usuario:</label>
                     <input
                         type="text"
                         className="form-control"
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Contraseña:</label>
+                    <label className="form-label fw-bold">Contraseña:</label>
                     <input
                         type="password"
                         className="form-control"
                         />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">confirma contraseña:</label>
+                    <label className="form-label fw-bold">Confirmar contraseña:</label>
                     <input
                         type="password"
                         className="form-control"
