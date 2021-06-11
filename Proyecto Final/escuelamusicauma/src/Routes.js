@@ -6,14 +6,18 @@ import ListarAlumnos from "./views/ListarAlumnos"
 import LoggeoView from "./views/LoggeoView"
 import RegistroView from "./views/RegistroView"
 import CalendarioAlumno from "./views/CalendarioAlumnoView"
+import LoggeoMenu from './views/LoggeoMenuView'
+
 
 function Routes() {
     return (
         <div>
             <Route path="/" exact component={LandingPage} />
             <Route path="/listarAlumnos" exact component={ListarAlumnos} />
-            <Route path="/usuario" exact component={LoggeoAlumno} />
+            <Route path="/usuario" exact component={LoggeoView} />
+            <Route path="/registro" exact component={RegistroView} />
             <Route path="/calendario" exact component={CalendarioAlumno} />
+            <Route path="/intranet" exact component={LoggeoMenu} />
 
         </div>
     )
