@@ -3,8 +3,7 @@ import {Route} from 'react-router-dom'
 
 import LandingPage from "./views/LandingView"
 import ListarAlumnos from "./views/ListarAlumnos"
-import LoggeoView from "./views/LoggeoView"
-import RegistroView from "./views/RegistroView"
+import LoggeoAlumno from "./views/LoggeoView"
 import CalendarioAlumno from "./views/CalendarioAlumnoView"
 
 function Routes() {

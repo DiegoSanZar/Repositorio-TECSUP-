@@ -3,9 +3,7 @@ import {Route} from 'react-router-dom'
 
 import LandingPage from "./views/LandingView"
 import ListarAlumnos from "./views/ListarAlumnos"
-import LoggeoView from "./views/LoggeoView"
-import RegistroView from "./views/RegistroView"
-import CalendarioAlumno from "./views/CalendarioAlumnoView"
+import LoggeoAlumno from "./views/LoggeoView"
 
 function Routes() {
     return (
@@ -13,7 +11,6 @@ function Routes() {
             <Route path="/" exact component={LandingPage} />
             <Route path="/listarAlumnos" exact component={ListarAlumnos} />
             <Route path="/usuario" exact component={LoggeoAlumno} />
-            <Route path="/calendario" exact component={CalendarioAlumno} />
 
         </div>
     )
