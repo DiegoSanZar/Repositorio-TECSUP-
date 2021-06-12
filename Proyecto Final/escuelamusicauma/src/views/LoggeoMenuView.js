@@ -7,10 +7,12 @@
 
  import React from 'react'
  import LoggeoMenu from "../components/LoggeoMenu"
- 
+ import SideBar from "../components/SideBar"
+
  function LoggeoMenuView() {
      return (
-         <div>
+        <div className="d-flex flex-row">
+            <SideBar></SideBar>   
              <LoggeoMenu></LoggeoMenu>
          </div>
      )

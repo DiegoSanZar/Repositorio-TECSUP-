@@ -1,14 +1,14 @@
 import React from 'react'
-import RegistroAlumno from "../components/RegistroAlumno"
+import TareasAlumno from "../components/TareasAlumno"
 import SideBar from "../components/SideBar"
 
-function RegistroView() {
+function TareasAlumnoView() {
     return (
         <div className="d-flex flex-row">
             <SideBar></SideBar>   
-            <RegistroAlumno></RegistroAlumno>
+            <TareasAlumno></TareasAlumno>
         </div>
     )
 }
 
-export default RegistroView
+export default TareasAlumnoView

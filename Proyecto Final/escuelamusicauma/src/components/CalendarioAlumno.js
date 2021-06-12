@@ -9,7 +9,7 @@ function CalendarioAlumno(){
 
         <div className="calendar  p-5">
             <div className="d-flex align-items-center"><i className="fa fa-calendar fa-3x mr-3"></i>
-            <h2 className="month font-weight-bold mb-0 text-uppercase">December 2019</h2>
+            <h2 className="month font-weight-bold m-2 text-uppercase">Junio 2021</h2>
             </div>
             <p className="font-italic text-muted mb-5">No events for this day.</p>
             <ol className="day-names list-unstyled">            
