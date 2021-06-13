@@ -1,5 +1,6 @@
 import {useContext} from 'react'
 import {CarritoContext} from "../context/carritoContext"
+import {Link} from "react-router-dom"
 
 function CarritoView() {
     let {carrito} = useContext(CarritoContext)
@@ -30,7 +31,8 @@ function CarritoView() {
                     </tr>
             ))}
             </tbody>
-        </table>    
+        </table> 
+        <Link className="btn btn-dark" to="/comprar">Realizar Compra</Link>   
         </div>
     )
 }

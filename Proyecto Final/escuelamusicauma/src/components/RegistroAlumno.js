@@ -1,6 +1,8 @@
 import React from 'react'
 
 function RegistroAlumno() {
+
+    
     return (
         <div>
              <h1 className="text-center">Formulario de Registro<i className="fas fa-music"></i> </h1>

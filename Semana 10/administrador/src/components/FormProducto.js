@@ -1,7 +1,14 @@
 import React, {useState, useEffect, useRef} from 'react'
+import {subirArchivo} from "../services/productoService"
 
 //esta variable me va a permitir manejar mi archivo sin problemas
 let imagen
+
+const asyncForEach = async (array, callback) => {
+    for(let i = 0; i <array.length; i++){
+        await callback(array[i]) //se detiene la ejecución hasta que termina 
+    }
+}
 
 function FormProducto({value, actualizarInput, setValue, manejarSubmit, categorias}) {
 
@@ -29,10 +36,16 @@ function FormProducto({value, actualizarInput, setValue, manejarSubmit, categori
     //     setValue({...value, colores:colores})
     // }, [colores])
 
-    const manejarImagen = (e) => {
+    const manejarImagen = async (e) => {
         e.preventDefault()
-        let misImagen = e.target.files[0]
+        let misImagenes = e.target.files
+        let urls = []
 
+        await asyncForEach(misImagenes, async(imagen) =>{
+            let urlImagenSubida = await subirArchivo(imagen)
+            urls.push(urlImagenSubida)
+        })
+        console.log("urls Imagenes", urls)
     }
 
     return (
