@@ -4,7 +4,7 @@ function RegistroAlumno() {
 
     
     return (
-        <div>
+        <div className="container">
              <h1 className="text-center">Formulario de Registro<i className="fas fa-music"></i> </h1>
             <div className="container d-flex justify-content-between">
                 <form>
