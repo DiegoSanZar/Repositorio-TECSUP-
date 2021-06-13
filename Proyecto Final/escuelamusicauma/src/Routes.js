@@ -6,7 +6,7 @@ import ListarAlumnos from "./views/ListarAlumnos"
 import LoggeoView from "./views/LoggeoView"
 import RegistroView from "./views/RegistroView"
 import CalendarioAlumno from "./views/CalendarioAlumnoView"
-import LoggeoMenu from './views/LoggeoMenuView'
+import IntranetAlumno from './views/LoggeoMenuView'
 import TareasMenu from './views/TareasAlumnoView'
 import AsistenciaAlumno from './views/AsistenciaAlumnoView'
 
@@ -19,7 +19,7 @@ function Routes() {
             <Route path="/usuario" exact component={LoggeoView} />
             <Route path="/registro" exact component={RegistroView} />
             <Route path="/calendario" exact component={CalendarioAlumno} />
-            <Route path="/intranet" exact component={LoggeoMenu} />
+            <Route path="/intranet" exact component={IntranetAlumno} />
             <Route path="/tareas" exact component={TareasMenu} />
             <Route path="/asistencia" exact component={AsistenciaAlumno} />
 

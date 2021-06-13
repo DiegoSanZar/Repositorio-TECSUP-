@@ -10,7 +10,6 @@ import "./estilos.css";
 
 
 
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,15 +1,40 @@
 import {Link} from "react-router-dom" 
 import logo from "../resources/img/uma_logo.jpg"
+import Swal from 'sweetalert2';
+import {useHistory} from "react-router-dom"
+import scriptSide from "../javascript"
 
 
 function SideBar(){
 
+    const history = useHistory()
+    const cerarSession = async (e) => {
+        
+
+        e.preventDefault()
+        try {          
+            Swal.fire({
+                title: '¿Deseas cerrar sesión?',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: `Si`,
+                denyButtonText: `No`,
+                }).then((result) => {                
+                if (result.isConfirmed) {
+                    history.push('/')
+                }
+                })
+        } catch (error) {
+          console.log(error)
+        }
+      }
+
     return (
-        <div className="sidebar-sticky">
-        <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{width: "280px"}}>
+      <div className="navbar-expand-sm sidebar bg-light">
+        <div className="d-flex flex-column flex-shrink-0 p-3 " style={{width: "280px"}}>
             <div className="d-flex justify-content-center">
                 <a className="navbar-brand" href="/">
-                <img src={logo} alt="Logo" className="navbar-brand-img" style={{width:"160px",height:"160px",borderRadius:"50%"}}></img>
+                <img src={logo} alt="Logo" className="navbar-brand-img" style={{width:"150px",height:"150px",borderRadius:"50%"}}></img>
                 </a>              
             </div>
             <hr />
@@ -42,9 +67,20 @@ function SideBar(){
                 </Link>
             </li>
             </ul>
+
             <hr />
+            <ul className="nav nav-pills flex-column mb-auto">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link link-dark" onClick={cerarSession}>                
+                    Salir
+                    </Link>
+                </li>
+            </ul> 
+            <hr />           
         </div>
-        </div>
+
+     </div>
+     
     )
 
 
