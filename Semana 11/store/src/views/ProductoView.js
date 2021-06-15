@@ -61,12 +61,13 @@ function ProductoView() {
                     </div>
                 </div>
                 <div className="container">
+                    <div className="row">
                     <div className="col-12 col-md-6">
                         <img src={producto.fotos[0]} alt={`foto de ${producto.nombre}`} className="img-fluid" />
                     </div>
                      <div className="col-12 col-md-6">
                          <h5 className="fw-bold">Colores</h5>
-                         <div className="d-flex">
+                         <div className="d-flex mb-3">
                          {producto.colores.map((item, i)=>(
                              <div style={{widht:'50px', height:'50px', backgroundColor:item, border:'1px solid gray', marginRight:'5px' }} key={i}/>
                          ))}
@@ -81,7 +82,8 @@ function ProductoView() {
                      <button className="btn btn-dark btn-lg" onClick={anadirProductoACarrito}>
                        Añadir a Carrito
                      </button>
-     
+                     </div>
+                     <hr/>
                      </div>
                      </div>
                 </div>
