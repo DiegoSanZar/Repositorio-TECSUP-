@@ -50,38 +50,44 @@ function ProductoView() {
     },[])
 
     return (
-        <div>
-           <div className="titulo-detalle">
-               <div className="container p-4 text-center">
-                    <h2 className="fw-bold">{producto.nombre}</h2>
-               </div>
-           </div>
-           <div className="container">
-               <div className="col-12 col-md-6">
-                   <img src={producto.fotos[0]} alt={`foto de ${producto.nombre}`} className="img-fluid" />
-               </div>
-                <div className="col-12 col-md-6">
-                    <h5 className="fw-bold">Colores</h5>
-                    <div className="d-flex">
-                    {producto.colores.map((item, i)=>(
-                        <div style={{widht:'50px', height:'50px', backgroundColor:item, border:'1px solid gray', marginRight:'5px' }} key={i}/>
-                    ))}
+        <Fragment>
+            {cargando ? (
+                <Loading/>
+            ):(
+            <div>
+                <div className="titulo-detalle">
+                    <div className="container p-4 text-center">
+                         <h2 className="fw-bold">{producto.nombre}</h2>
+                    </div>
                 </div>
-                <h5 className="fw-bold">Descripción</h5>
-                <p>{producto.descripcion}</p>
-                <hr/>
-                <div className="py-3 d-flex justify-content-between align-items-center">
-                    <span className="fw-bold" style={{fontSize:'32px'}}>
-                  S/ {producto.precio}
-                </span>
-                <button className="btn btn-dark btn-lg" onClick={anadirProductoACarrito}>
-                  Añadir a Carrito
-                </button>
-
+                <div className="container">
+                    <div className="col-12 col-md-6">
+                        <img src={producto.fotos[0]} alt={`foto de ${producto.nombre}`} className="img-fluid" />
+                    </div>
+                     <div className="col-12 col-md-6">
+                         <h5 className="fw-bold">Colores</h5>
+                         <div className="d-flex">
+                         {producto.colores.map((item, i)=>(
+                             <div style={{widht:'50px', height:'50px', backgroundColor:item, border:'1px solid gray', marginRight:'5px' }} key={i}/>
+                         ))}
+                     </div>
+                     <h5 className="fw-bold">Descripción</h5>
+                     <p>{producto.descripcion}</p>
+                     <hr/>
+                     <div className="py-3 d-flex justify-content-between align-items-center">
+                         <span className="fw-bold" style={{fontSize:'32px'}}>
+                       S/ {producto.precio}
+                     </span>
+                     <button className="btn btn-dark btn-lg" onClick={anadirProductoACarrito}>
+                       Añadir a Carrito
+                     </button>
+     
+                     </div>
+                     </div>
                 </div>
-                </div>
-           </div>
-        </div>
+             </div>
+             )}
+        </Fragment>
     )
 }
 

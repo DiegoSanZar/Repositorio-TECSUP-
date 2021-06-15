@@ -1,8 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useRef } from 'react'
 import {subirArchivo} from "../services/productoService"
 
 //esta variable me va a permitir manejar mi archivo sin problemas
-let imagen
+let imagenes
 
 const asyncForEach = async (array, callback) => {
     for(let i = 0; i <array.length; i++){
@@ -12,10 +12,7 @@ const asyncForEach = async (array, callback) => {
 
 function FormProducto({value, actualizarInput, setValue, manejarSubmit, categorias}) {
 
-    // const [colores, setColores] = useState([])
-    // const [fotos, setFotos] = useState([])
-
-        //useRef, es como un id interno de React
+    //useRef, es como un id interno de React
     const inputColor = useRef()
     const inputFotos = useRef()
 
@@ -25,32 +22,31 @@ function FormProducto({value, actualizarInput, setValue, manejarSubmit, categori
         setValue({...value, colores:[...value.colores, nuevoColor]})
     }
 
-    const anadirFoto = (e) =>{
+    const ejecutarSubmit = async(e) => {
         e.preventDefault()
-
-        // let nuevaFoto = inputFotos.current.value
-        // setValue({...value, fotos:[...value.fotos, nuevaFoto]})
-    }
-
-    // useEffect(() =>{
-    //     setValue({...value, colores:colores})
-    // }, [colores])
+        //primero subimos las imagenes
+        let urls = []
+    
+        await asyncForEach(imagenes, async(imagen) => {
+          let urlImagenSubida = await subirArchivo(imagen)
+          urls.push(urlImagenSubida)
+        })
+        //Cuando editemos no vamos a poder editar las fotos
+        //En caso no agreguemos fotos, no tocará las fotos anteriores
+        
+        //segundo recien ejecutamos el submit de la vista
+        manejarSubmit(e, urls)
+      }
 
     const manejarImagen = async (e) => {
         e.preventDefault()
-        let misImagenes = e.target.files
-        let urls = []
-
-        await asyncForEach(misImagenes, async(imagen) =>{
-            let urlImagenSubida = await subirArchivo(imagen)
-            urls.push(urlImagenSubida)
-        })
-        console.log("urls Imagenes", urls)
+        let misImagenes = e.target.files //esto es un array
+        imagenes = misImagenes
     }
 
     return (
         <div>
-            <form onSubmit={(e) =>{manejarSubmit(e)}}>
+            <form onSubmit={(e) =>{ejecutarSubmit(e)}}>
                 <div className="mb-3">
                     <label className="form-label">Nombre</label>
                     <input
@@ -121,9 +117,7 @@ function FormProducto({value, actualizarInput, setValue, manejarSubmit, categori
                         onChange={(e) =>{manejarImagen(e)}}
                         multiple
                     />
-                    <button className="btn btn-primary btn-sm" onClick={(e) =>{anadirFoto(e)}}>
-                        Agregar Foto
-                    </button>     
+                        
                     <ul className="list-group">
                         {value.fotos.map((fotito, i) => (
                             <li className="list-group-item" key={i}>
