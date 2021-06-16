@@ -8,7 +8,7 @@ const creaAlumno  = async (nuevoAlumno) => {
         let {data} = await axios.post(URL, nuevoAlumno, {headers} )
         return data
     }catch(error){
-        console.log(error)
+        throw error
     }
 }
 
@@ -27,7 +27,7 @@ const obtenerAlumnos = async() => {
         let {data} = await axios.get(URL)
         return data
     }catch(error){
-        console.log(error)
+        throw error
     }
  
 }

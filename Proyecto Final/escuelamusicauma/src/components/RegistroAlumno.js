@@ -1,10 +1,6 @@
 import React from 'react'
+import {creaAlumno} from "../services/alumnoService"
 
-const asyncForEach = async (array, callback) => {
-    for(let i = 0; i <array.length; i++){
-        await callback(array[i]) //se detiene la ejecución hasta que termina 
-    }
-}
 
 function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
 
@@ -13,7 +9,7 @@ function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
         <div className="container">
              <h1 className="text-center">Formulario de Registro<i className="fas fa-music"></i> </h1>
             <div>
-                <form onClick={(e) =>{manejarSubmit(e)}} className="container d-flex justify-content-between">
+                <form onSubmit={(e)=>{manejarSubmit(e)}} className="container d-flex justify-content-between">
                 <div>
                 <div className="mb-3">
                     <label className="form-label fw-bold">Nombres:</label>
@@ -43,8 +39,8 @@ function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
                         type="text"
                         className="form-control"
                         placeholder="Ej. Reyes"
-                        name="nombre"
-                        value={value.nombre}
+                        name="apellidoMaterno"
+                        value={value.apellidoMaterno}
                         onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>

@@ -21,6 +21,13 @@ function RegistroView() {
         instrumento:''
     })
 
+    const actualizarImput = (e) => {
+        setValue({
+            ...value,
+            [e.target.name]: e.target.value
+        })
+    }
+
     const history = useHistory()
 
     const manejarSubmit = async (e) => {
@@ -38,16 +45,10 @@ function RegistroView() {
             console.log(error)
         }
     }
-
-    const actualizarInput = (e) =>{
-        setValue({...value,[e.target.name]: e.target.value
-        })
-    }
-
     return (
         <div className="d-flex flex-row">
             <SideBar></SideBar>   
-            <RegistroAlumno value={value} actualizarInput={actualizarInput} setValue={setValue} manejarSubmit={manejarSubmit}></RegistroAlumno>
+            <RegistroAlumno value={value} actualizarInput={actualizarImput} setValue={setValue} manejarSubmit={manejarSubmit}></RegistroAlumno>
         </div>
     )
 }
