@@ -1,0 +1,30 @@
+<h1>Crear Nuevo Producto</h1>
+<div>
+    <div>
+        <label class="form-label">
+            Nombre Producto
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoProducto.nombre">
+    </div>
+    <div>
+        <label class="form-label">
+            Descripcion
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoProducto.descripcion">
+    </div> 
+    <div>
+        <label class="form-label">
+            Stock
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoProducto.stock">
+    </div>
+    <div>
+        <label class="form-label">
+            Precio
+        </label>
+        <input type="text" class="form-control" [(ngModel)]="nuevoProducto.precio"> 
+    </div> 
+    <button class="btn btn-primary" (click)="createProducto()">
+        Enviar
+    </button>
+</div>
