@@ -1,9 +1,8 @@
 import React from 'react'
-import {Link} from "react-router-dom" 
 import loggingAlumno from "../services/alumnoService"
 
 
-function LoggeoAlumno() {
+function LoggeoAlumno({manejarSubmit}) {
 
 
     return (
@@ -14,7 +13,9 @@ function LoggeoAlumno() {
             height:'400px'
         }}>
             <h1 className="text-center">Escuela de Música UMA <i className="fas fa-music"></i> </h1>
-                <form>
+                <form
+                onSubmit={(e) => {manejarSubmit(e)}}
+                >
                 <div className="mb-3">
                     <label className="form-label">Usuario:</label>
                     <input
@@ -29,9 +30,11 @@ function LoggeoAlumno() {
                         className="form-control"
                         />
                 </div>
+                <button className="btn btn-primary" type="submit">Ingresar</button>
                 </form>
-            <Link className="btn btn-primary" to="/inicioSesion">Ingresar</Link>
-
+            
+            <hr/>
+            <span style={{color:'blue'}}>Olvide mi contraseña</span>
         </div>
     )
 }
