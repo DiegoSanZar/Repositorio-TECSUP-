@@ -1,14 +1,14 @@
 //interface => contrato
-
+//modelos
 interface iGato {
-    nombre:string
-    edad:number
-    raza:string
-    color?:string
+  nombre:string
+  edad:number
+  raza:string
+  color?:string
 }
 
 let gatita:iGato = {
-    nombre: "Gatita",
-    raza:"Siames",
-    edad:6
+  nombre: "Gatita",
+  edad:6,
+  raza:"Siames",
 }
