@@ -27,7 +27,7 @@ function SideBar(){
         } catch (error) {
           console.log(error)
         }
-      }
+    }
 
     return (
       <div className="navbar-expand-sm sidebar bg-light">
@@ -40,28 +40,28 @@ function SideBar(){
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-                <Link to="/intranet" className="nav-link active" aria-current="page">                
+                <Link to="/intranet" id="menu-intranet" className="nav-link active" aria-current="page">                
                 Inicio
                 </Link>
             </li>
             <li>
-                <Link to="/registro" className="nav-link link-dark">                
+                <Link to="/registro" id="menu-registro" className="nav-link link-dark">                
                 Mis datos
                 </Link>
             </li>
             <li>
-                <Link to="/calendario" className="nav-link link-dark">                
+                <Link to="/calendario" id="menu-calendario" className="nav-link link-dark">                
                 Calendario clases
                 </Link>
             </li>
             <li>
-                <Link to="/tareas" className="nav-link link-dark">
+                <Link to="/tareas" id="menu-tareas" className="nav-link link-dark">
                 
                 Tareas
                 </Link>
             </li>
             <li>
-                <Link to="/asistencia" className="nav-link link-dark">
+                <Link to="/asistencia" id="menu-asistencia" className="nav-link link-dark">
                 
                 Asistencia
                 </Link>
