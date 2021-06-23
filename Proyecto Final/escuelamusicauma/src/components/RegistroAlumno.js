@@ -1,10 +1,6 @@
 import React from 'react'
+import {creaAlumno} from "../services/alumnoService"
 
-const asyncForEach = async (array, callback) => {
-    for(let i = 0; i <array.length; i++){
-        await callback(array[i]) //se detiene la ejecución hasta que termina 
-    }
-}
 
 function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
 

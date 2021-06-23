@@ -1,0 +1,28 @@
+<code>ngIf</code>
+<hr>
+<div *ngIf="logueado else noLogeado">
+    Bienvenido
+</div>
+
+<ng-template #noLogeado>
+    Amigo Ingresa por favor 
+</ng-template>
+
+<hr>
+<ul>
+    <li *ngFor="let alum of alumnos">
+        {{alum}}
+    </li>
+</ul>
+
+<button (click)="mostrarAlerta()">
+    Haz click!!!
+</button>
+
+<img [src]="url" alt="...">
+
+<input type="text" [(ngModel)]="texto">
+<button (click)="agregarAlumnos()">
+    Agregar Alumnos
+</button>
+<h3>Mi texto es: {{texto}}</h3>
