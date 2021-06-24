@@ -40,10 +40,10 @@ function CrearProductoView() {
         getCategorias()
     },[])
 
-    const manejarSubmit = async (e) => {
+    const manejarSubmit = async (e, urlsFotos) => {
         e.preventDefault()
         try {
-            await crearProducto({...value})
+            await crearProducto({...value, fotos:[...urlsFotos]})
             await Swal.fire({
                 icon:'success',
                 title:'Producto Creado',

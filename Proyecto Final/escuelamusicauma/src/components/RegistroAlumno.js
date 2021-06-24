@@ -1,19 +1,25 @@
 import React from 'react'
+import {creaAlumno} from "../services/alumnoService"
 
-function RegistroAlumno() {
+
+function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
 
     
     return (
         <div className="container">
              <h1 className="text-center">Formulario de Registro<i className="fas fa-music"></i> </h1>
-            <div className="container d-flex justify-content-between">
-                <form>
+            <div>
+                <form onSubmit={(e)=>{manejarSubmit(e)}} className="container d-flex justify-content-between">
+                <div>
                 <div className="mb-3">
                     <label className="form-label fw-bold">Nombres:</label>
                     <input
                         type="text"
                         className="form-control"
                         placeholder="Ej. Diego Eugenio"
+                        name="nombre"
+                        value={value.nombre}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -22,6 +28,9 @@ function RegistroAlumno() {
                         type="text"
                         className="form-control"
                         placeholder="Ej. Sotomayor"
+                        name="apellidoPaterno"
+                        value={value.apellidoPaterno}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -30,6 +39,9 @@ function RegistroAlumno() {
                         type="text"
                         className="form-control"
                         placeholder="Ej. Reyes"
+                        name="apellidoMaterno"
+                        value={value.apellidoMaterno}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -38,6 +50,9 @@ function RegistroAlumno() {
                         type="email"
                         className="form-control"
                         placeholder="Ej. dsotomayor@gmail.com"
+                        name="email"
+                        value={value.email}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -45,6 +60,9 @@ function RegistroAlumno() {
                     <input
                         type="date"
                         className="form-control"
+                        name="fechaNacimiento"
+                        value={value.fechaNacimiento}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -53,15 +71,22 @@ function RegistroAlumno() {
                         type="text"
                         className="form-control"
                         placeholder="Ej. fernando Francisco Sotomayor Garcia"
+                        name="nombrePadre"
+                        value={value.nombrePadre}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
-                </form> 
-                <form>
+                </div>
+
+                <div>
                 <div className="mb-3">
                     <label className="form-label fw-bold">Usuario:</label>
                     <input
                         type="text"
                         className="form-control"
+                        name="usuario"
+                        value={value.usuario}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -69,6 +94,9 @@ function RegistroAlumno() {
                     <input
                         type="password"
                         className="form-control"
+                        name="contrasea"
+                        value={value.contrasea}
+                        onChange={(e)=>{actualizarInput(e)}}
                         />
                 </div>
                 <div className="mb-3">
@@ -77,6 +105,12 @@ function RegistroAlumno() {
                         type="password"
                         className="form-control"
                         />
+                </div>
+                </div>
+                <div>
+                    <button type="submit" className="btn btn-primary">
+                        Guardar
+                    </button>
                 </div>
                 </form>
         </div>
