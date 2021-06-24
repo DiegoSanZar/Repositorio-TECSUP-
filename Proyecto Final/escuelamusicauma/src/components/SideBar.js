@@ -1,14 +1,29 @@
-import {Link} from "react-router-dom" 
-import logo from "../resources/img/uma_logo.jpg"
+import {Link} from "react-router-dom" ;
+import logo from "../resources/img/uma_logo.jpg";
 import Swal from 'sweetalert2';
-import {useHistory} from "react-router-dom"
-import scriptSide from "../javascript"
+import {useHistory} from "react-router-dom";
+import React, { useContext } from "react";
+import { sideBarContext } from "../context/sideBarContext";
+
+
 
 
 function SideBar(){
 
+    
     const history = useHistory()
-    const cerarSession = async (e) => {
+    let { sideBarActive } = useContext(sideBarContext);
+    let { actualizarActiveLink } = useContext(sideBarContext);
+
+
+    const evaluateActiveLink = (actual) => {
+        if(actual == sideBarActive){
+            return true;
+        }
+        return false;
+    } 
+
+    const cerrarSession = async (e) => {
         
 
         e.preventDefault()
@@ -27,7 +42,7 @@ function SideBar(){
         } catch (error) {
           console.log(error)
         }
-      }
+      }   
 
     return (
       <div className="navbar-expand-sm sidebar bg-light">
@@ -40,28 +55,34 @@ function SideBar(){
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-                <Link to="/intranet" className="nav-link active" aria-current="page">                
+                <Link to="/intranet" className={`${evaluateActiveLink("intranet") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("intranet")}}
+                >                
                 Inicio
                 </Link>
             </li>
             <li>
-                <Link to="/registro" className="nav-link link-dark">                
+                <Link to="/registro" className={`${evaluateActiveLink("registro") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("registro")}}>                
                 Mis datos
                 </Link>
             </li>
             <li>
-                <Link to="/calendario" className="nav-link link-dark">                
+                <Link to="/calendario" className={`${evaluateActiveLink("calendario") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("calendario")}}>                
                 Calendario clases
                 </Link>
             </li>
             <li>
-                <Link to="/tareas" className="nav-link link-dark">
+                <Link to="/tareas" className={`${evaluateActiveLink("tareas") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("tareas")}}>    
                 
                 Tareas
                 </Link>
             </li>
             <li>
-                <Link to="/asistencia" className="nav-link link-dark">
+                <Link to="/asistencia" className={`${evaluateActiveLink("asistencia") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("asistencia")}}>  
                 
                 Asistencia
                 </Link>
@@ -71,7 +92,7 @@ function SideBar(){
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item">
-                    <Link to="/" className="nav-link link-dark" onClick={cerarSession}>                
+                    <Link to="/" className="nav-link link-dark" onClick={cerrarSession}>                
                     Salir
                     </Link>
                 </li>
