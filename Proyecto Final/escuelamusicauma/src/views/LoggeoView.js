@@ -9,6 +9,8 @@ function LoggeoView() {
 
     const manejarSubmit = async (e) => {
       e.preventDefault()
+
+      
       history.push('/intranet')
 
     }

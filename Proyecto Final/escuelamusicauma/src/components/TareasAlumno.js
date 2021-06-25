@@ -3,12 +3,12 @@ import {obtenerTareaPorAlumno} from "../services/tareaService"
 
 function TareasAlumno() {
 
-    const [tarea, setTarea] = useState([{}]);
+    const [tarea, setTarea] = useState([]);
 
     const getTareasPorAlumno = async(alumnoId) =>{
         try {
             let tareaObtenida = await obtenerTareaPorAlumno(alumnoId);
-            setTarea({ ...tareaObtenida });
+            setTarea(tareaObtenida );
             console.log(tarea);
           } catch (error) {
             console.log(error);
@@ -22,8 +22,13 @@ function TareasAlumno() {
 
       <div className="container">
         {/* {
-          tarea.map((prod,i) => (
-            <h1>Hola</h1>
+          tarea.map((tareaItem,i) => (
+            if(tareaItem.activo){
+              
+            }
+            else {
+              
+            }
           ))
         } */}
         <div className="col-12 t-3 mt-3">
@@ -95,6 +100,7 @@ function TareasAlumno() {
           </div>
         </div>
         </div>
+      
       </div>
 
 
