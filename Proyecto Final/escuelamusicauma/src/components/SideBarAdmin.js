@@ -68,8 +68,8 @@ function SideBarAdmin(){
                 </Link>
             </li>
             <li>
-                <Link to="/listaAlumnos" className={`${evaluateActiveLink("listaAlumnos") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("listaAlumnos")}}>                
+                <Link to="/listarAlumnos" className={`${evaluateActiveLink("listarAlumnos") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("listarAlumnos")}}>                
                 Listado de Alumnos
                 </Link>
             </li>
