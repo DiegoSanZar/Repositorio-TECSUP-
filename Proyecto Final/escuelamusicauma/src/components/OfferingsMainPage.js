@@ -3,55 +3,40 @@ function OfferingsMainPAge(){
 
     return (
     
-<div className="container mt-3 ">
-    <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div className="col">
-        <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
-        <h2 className="card-title pricing-card-title"><small className="fw-light">Misión</small></h2>
-
-          </div>            
-          <div className="card-body">
-              <p className="mt-3 mb-4">
-                Formar personas bajo un programa musical integral de calidad, transmitiendo valores y principios que les permitan desarrollarse plenamente, dentro de un ambiente acogedor y con amplia y moderna infraestructura.
-              </p>
-          </div>
+  <div className="container px-4 py-5" id="featured-3">
+    <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div className="feature col">
+        <div className="feature-icon bg-primary bg-gradient">
+          <svg className="bi" width="1em" height="1em"></svg>
         </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" className="icon-link">
+          Call to action
+        </a>
       </div>
-
-      <div className="col">
-        <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
-            <h2 className="card-title pricing-card-title"><small className="fw-light">Visión</small></h2>
-          </div>            
-          <div className="card-body mt-3 mb-4">
-              <p className="mt-3 mb-4">
-                Ser la escuela de música líder del país en la formación de ciudadanos que contribuyan al desarrollo cultural del Perú.
-              </p>
-          </div>
+      <div className="feature col">
+        <div className="feature-icon bg-primary bg-gradient">
+          <svg className="bi" width="1em" height="1em"></svg>
         </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" className="icon-link">
+          Call to action
+        </a>
       </div>
-
-      <div className="col">
-        <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
-            <h2 className="card-title pricing-card-title"><small className="fw-light">Valores institucionales</small></h2>
-          </div>            
-          <div className="card-body">
-            <ul class="list-unstyled">
-                <li>Gratitud</li>
-                <li>Honestidad</li>
-                <li>Humildad</li>
-                <li>Lealtad</li>
-                <li>Respeto</li>
-                <li>Tolerancia</li>
-            </ul>
-
-          </div>
+      <div className="feature col">
+        <div className="feature-icon bg-primary bg-gradient">
+          <svg className="bi" width="1em" height="1em"></svg>
         </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" className="icon-link">
+          Call to action
+        </a>
       </div>
     </div>
-    </div>
+  </div>
     );
 }
 
