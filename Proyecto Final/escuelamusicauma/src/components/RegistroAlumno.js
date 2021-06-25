@@ -9,7 +9,7 @@ function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
             <div className="container">
                 <h1 className="text-center">Formulario de Registro</h1>
                 <hr/>
-                <form onClick={(e) =>{manejarSubmit(e)}} className="row g-3">
+                <form onSubmit={(e) =>{manejarSubmit(e)}} className="row g-3">
                     <div className="col-sm-4">
                         <label className="form-label fw-bold">Nombres:</label>
                         <input
@@ -40,8 +40,8 @@ function RegistroAlumno({value, actualizarInput, setValue, manejarSubmit}) {
                             type="text"
                             className="form-control"
                             placeholder="Ej. Reyes"
-                            name="nombre"
-                            value={value.nombre}
+                            name="apellidoMaterno"
+                            value={value.apellidoMaterno}
                             onChange={(e)=>{actualizarInput(e)}}
                             />
                     </div>
