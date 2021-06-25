@@ -3,21 +3,21 @@ import logo from "../resources/img/uma_logo.jpg";
 import Swal from 'sweetalert2';
 import {useHistory} from "react-router-dom";
 import React, { useContext } from "react";
-import { sideBarContext } from "../context/sideBarContext";
+import { sideBarAdminContext } from "../context/sideBarAdminContext";
 
 
 
 
-function SideBar(){
+function SideBarAdmin(){
 
     
     const history = useHistory()
-    let { sideBarActive } = useContext(sideBarContext);
-    let { actualizarActiveLink } = useContext(sideBarContext);
+    let { sideBarAdminActive } = useContext(sideBarAdminContext);
+    let { actualizarActiveLink } = useContext(sideBarAdminContext);
 
 
     const evaluateActiveLink = (actual) => {
-        if(actual == sideBarActive){
+        if(actual == sideBarAdminActive){
             return true;
         }
         return false;
@@ -55,36 +55,22 @@ function SideBar(){
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-                <Link to="/intranet" className={`${evaluateActiveLink("intranet") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("intranet")}}
+                <Link to="/intranetAdmin" className={`${evaluateActiveLink("intranetAdmin") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("intranetAdmin")}}
                 >                
                 Inicio
                 </Link>
             </li>
             <li>
-                <Link to="/registro" className={`${evaluateActiveLink("registro") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("registro")}}>                
-                Mis datos
+                <Link to="/registroAlumno" className={`${evaluateActiveLink("registroAlumno") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("registroAlumno")}}>                
+                Registro de Alumnos
                 </Link>
             </li>
             <li>
-                <Link to="/calendario" className={`${evaluateActiveLink("calendario") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("calendario")}}>                
-                Calendario clases
-                </Link>
-            </li>
-            <li>
-                <Link to="/tareas" className={`${evaluateActiveLink("tareas") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("tareas")}}>    
-                
-                Tareas
-                </Link>
-            </li>
-            <li>
-                <Link to="/asistencia" className={`${evaluateActiveLink("asistencia") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("asistencia")}}>  
-                
-                Asistencia
+                <Link to="/listaAlumnos" className={`${evaluateActiveLink("listaAlumnos") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("listaAlumnos")}}>                
+                Listado de Alumnos
                 </Link>
             </li>
             </ul>
@@ -108,4 +94,4 @@ function SideBar(){
 
 }
 
-export default SideBar;
+export default SideBarAdmin;
