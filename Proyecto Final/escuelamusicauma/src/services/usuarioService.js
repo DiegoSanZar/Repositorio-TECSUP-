@@ -15,11 +15,11 @@ const obtenerUsuarios = async() => {
 
 const loggingUsuario = async(nombreUsuario, contraseniaUsuario) => {
     try{
-        const usuariosObtenido = obtenerUsuarios()
-        usuariosObtenido.filter((usuario)=>{
-            return usuario.nombreUsuario === nombreUsuario && usuario.contrasenia === contraseniaUsuario
-        })
-        return usuariosObtenido
+        const usuariosObtenidos = await obtenerUsuarios()
+        return usuariosObtenidos.filter((usuario)=>{
+                    return usuario.nombreUsuario === nombreUsuario && usuario.contrasenia === contraseniaUsuario
+                })       
+        
     }catch(error){
         console.log(error)
     }
