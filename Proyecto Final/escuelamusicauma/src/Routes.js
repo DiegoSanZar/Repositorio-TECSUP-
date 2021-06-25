@@ -2,6 +2,9 @@ import React from 'react'
 import {Route} from 'react-router-dom'
 
 import LandingPage from "./views/LandingView"
+import LandingClases from "./views/LandingClases"
+import LandingContactenos from "./views/LandingContactenos"
+import LandingNosotros from "./views/LandingNosotros"
 import ListarAlumnos from "./views/ListarAlumnos"
 import LoggeoView from "./views/LoggeoView"
 import RegistroView from "./views/RegistroView"
@@ -23,6 +26,9 @@ function Routes() {
             <Route path="/tareas" exact component={TareasMenu} />
             <Route path="/asistencia" exact component={AsistenciaAlumno} />
 
+            <Route path="/clases" exact component={LandingClases} />
+            <Route path="/contactenos" exact component={LandingContactenos} />
+            <Route path="/nosotros" exact component={LandingNosotros} />
         </div>
     )
 }

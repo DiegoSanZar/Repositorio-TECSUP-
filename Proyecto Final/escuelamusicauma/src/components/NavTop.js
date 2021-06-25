@@ -20,7 +20,7 @@ function NavTop() {
           <div className={`${estaColapsado ? 'collapse' : ''} navbar-collapse`} id="navbarCollapse">
             <ul className="navbar-nav ">
               <li className="nav-item p-3">
-                <a className="nav-link" href="#">Inicio</a>
+                <Link className="nav-link" to="/">Inicio</Link>
               </li>
               <li className="nav-item p-3">
                 <Link className="nav-link" to="/carrito">Eventos</Link>
@@ -29,10 +29,10 @@ function NavTop() {
                 <Link className="nav-link" to="/carrito">Nosotros</Link>
               </li>              
               <li className="nav-item p-3">
-                <Link className="nav-link" to="/calendario">Clases</Link>
+                <Link className="nav-link" to="/clases">Clases</Link>
               </li>              
               <li className="nav-item p-3">
-                <Link className="nav-link" to="/carrito">Contactenos</Link>
+                <Link className="nav-link" to="/contactenos">Contactenos</Link>
               </li> 
             </ul>
             <Link className="navbar-btn btn btn-sm btn-primary lift ms-auto p-2" to="/usuario">Iniciar Sesión</Link>
