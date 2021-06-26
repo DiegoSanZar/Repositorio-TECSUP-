@@ -32,14 +32,10 @@ function Footer() {
           <h5 className="text-primary fw-bolder">Nosotros:</h5>
           <ul className="list-unstyled text-small">
             <li>
-              <a className="link-light" href="#">
-                Eventos
-              </a>
+              <Link className="link-light" to="/eventos">Eventos</Link>
             </li>
             <li>
-              <a className="link-light" href="#">
-                Nosotros
-              </a>
+              <Link className="link-light" to="/nosotros">Nosotros</Link>
             </li>
             <li>
                 <Link className="link-light" to="/clases">Clases</Link>
