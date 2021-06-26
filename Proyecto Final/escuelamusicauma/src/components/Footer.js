@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="container-fluid py-5 bg-dark">
       <div className="row">
-        <div className="col-12 col-md text-center">
+        <div className="col-md-4 col-sm-12 text-center">
           <a className="navbar-brand" href="#">
             <img
               src={logo}
@@ -19,7 +19,7 @@ function Footer() {
             ></img>
           </a>
         </div>
-        <div className="col-6 col-md">
+        <div className="col-md-4 col-sm-6">
           <h5 className="text-primary fw-bolder">Sede principal</h5>
           <p className="text-light">
             <FontAwesomeIcon icon={faMapMarkerAlt}/> Sede Principal             <br />
@@ -28,18 +28,14 @@ function Footer() {
             <FontAwesomeIcon icon={faPhoneSquare}/> Teléfono: (511) 426 9677
           </p>
         </div>
-        <div className="col-6 col-md">
+        <div className="col-md-4 col-sm-6">
           <h5 className="text-primary fw-bolder">Nosotros:</h5>
           <ul className="list-unstyled text-small">
             <li>
-              <a className="link-light" href="#">
-                Eventos
-              </a>
+              <Link className="link-light" to="/eventos">Eventos</Link>
             </li>
             <li>
-              <a className="link-light" href="#">
-                Nosotros
-              </a>
+              <Link className="link-light" to="/nosotros">Nosotros</Link>
             </li>
             <li>
                 <Link className="link-light" to="/clases">Clases</Link>

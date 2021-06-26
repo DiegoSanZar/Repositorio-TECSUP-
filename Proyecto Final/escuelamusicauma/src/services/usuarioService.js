@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = "https://609f2660c512c20017dccd5e.mockapi.io/usuario"
+const URL = `${process.env.REACT_APP_URL_API}/usuario`
 
 
 const obtenerUsuarios = async() => {

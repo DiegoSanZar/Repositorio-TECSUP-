@@ -23,7 +23,7 @@ function NavTop() {
                 <Link className="nav-link" to="/">Inicio</Link>
               </li>
               <li className="nav-item p-3">
-                <Link className="nav-link" to="/carrito">Eventos</Link>
+                <Link className="nav-link" to="/eventos">Eventos</Link>
               </li>
               <li className="nav-item p-3">
                 <Link className="nav-link" to="/nosotros">Nosotros</Link>
