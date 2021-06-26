@@ -11,7 +11,6 @@ function MostrarAlumnoView() {
     const getAlumnoId = async() =>{
         try{
             let alumnoObtenidoId = await obtenerAlumnoPorId(alumnoIdContext)            
-
             setAlumnoId([alumnoObtenidoId])            
          }catch(error){
              throw error
@@ -26,7 +25,7 @@ function MostrarAlumnoView() {
         <div className="d-flex flex-row">
             <SideBar></SideBar>
             <div className="container">
-            <h1>Datos Alumno </h1>
+            <h1>Hola! {alumnoId.map((alumnId, d) =>(alumnId.nombre))} estos son tus datos!</h1>
             <table className="table">
                 <thead>
                     <tr>
