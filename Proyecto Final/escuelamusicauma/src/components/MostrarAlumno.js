@@ -1,14 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import { obtenerAlumnoPorId } from '../services/alumnoService'
+import { AuthContext } from './context/AuthContext'
 
 
 function MostrarAlumno() {
 
+    let { alumnoIdContext } = useContext(AuthContext);  
     const[alumno, setAlumno] = useState([])
+    
 
     const getAlumnoId = async() =>{
         try{
-            let alumnoObtenidoId = await obtenerAlumnoPorId(1)
+            console.log('alumnoIdContext ' + alumnoIdContext)
+            let alumnoObtenidoId = await obtenerAlumnoPorId(alumnoIdContext)
             console.log(alumnoObtenidoId)
             setAlumno(alumnoObtenidoId)            
          }catch(error){

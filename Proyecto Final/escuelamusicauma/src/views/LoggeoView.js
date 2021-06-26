@@ -35,6 +35,7 @@ function LoggeoView() {
          if(alumnoObtenido != null && alumnoObtenido != undefined && alumnoObtenido.length > 0) {
              console.log("=>>:" + alumnoObtenido);            
              actualizarAuth(true)
+             console.log("=>>:" + alumnoObtenido[0].alumnoId);    
              actualizarAlumnoId(alumnoObtenido[0].alumnoId)
              if(alumnoObtenido[0].tipo == 0){
                 history.push('/intranetAdmin')

@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useContext} from 'react'
 import { obtenerAlumnoPorId } from '../services/alumnoService'
+import SideBar from "../components/SideBar"
+import { AuthContext } from '../context/AuthContext'
 
 function MostrarAlumnoView() {
 
     const[alumnoId, setAlumnoId] = useState([])
+    let { alumnoIdContext } = useContext(AuthContext); 
 
     const getAlumnoId = async() =>{
         try{
-            let alumnoObtenidoId = await obtenerAlumnoPorId()
-            console.log(alumnoObtenidoId)
-            setAlumnoId(alumnoObtenidoId)
-            console.log(alumnoId)
+            let alumnoObtenidoId = await obtenerAlumnoPorId(alumnoIdContext)            
+            setAlumnoId([alumnoObtenidoId])            
          }catch(error){
              throw error
          }
@@ -21,7 +22,9 @@ function MostrarAlumnoView() {
     }, [])
 
     return (
-        <div>
+        <div className="d-flex flex-row">
+            <SideBar></SideBar>
+            <div className="container">
             <h1>Datos Alumno </h1>
             <table className="table">
                 <thead>
@@ -34,17 +37,18 @@ function MostrarAlumnoView() {
                     </tr>
                 </thead>
                 <tbody>
-                    {alumnoId.map((alumnd, d) =>(
+                    {alumnoId.map((alumnId, d) =>(
                         <tr key={d}>
-                            <td>{alumnd.nombre}</td>
-                            <td>{alumnd.apellidoPaterno}</td>
-                            <td>{alumnd.apellidoMaterno}</td>
-                            <td>{alumnd.email}</td>
-                            <td>{alumnd.fechaRegistro}</td>
+                            <td>{alumnId.nombre}</td>
+                            <td>{alumnId.apellidoPaterno}</td>
+                            <td>{alumnId.apellidoMaterno}</td>
+                            <td>{alumnId.email}</td>
+                            <td>{alumnId.fechaRegistro}</td>
                         </tr>
-                    ))}
+                    ))} 
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }
