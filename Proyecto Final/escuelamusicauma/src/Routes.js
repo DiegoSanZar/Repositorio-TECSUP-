@@ -6,6 +6,8 @@ import LandingPage from "./views/LandingView"
 import LandingClases from "./views/LandingClases"
 import LandingContactenos from "./views/LandingContactenos"
 import LandingNosotros from "./views/LandingNosotros"
+import LandingEventos from "./views/LandingEventos"
+
 import ListarAlumnos from "./views/ListarAlumnos"
 import LoggeoView from "./views/LoggeoView"
 import RegistroView from "./views/RegistroView"
@@ -36,6 +38,7 @@ function Routes() {
             <Route path="/clases" exact component={LandingClases} />
             <Route path="/contactenos" exact component={LandingContactenos} />
             <Route path="/nosotros" exact component={LandingNosotros} />
+            <Route path="/eventos" exact component={LandingEventos} />
         </div>
     )
 }
