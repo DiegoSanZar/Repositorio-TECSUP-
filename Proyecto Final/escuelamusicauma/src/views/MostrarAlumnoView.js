@@ -11,7 +11,6 @@ function MostrarAlumnoView() {
     const getAlumnoId = async() =>{
         try{
             let alumnoObtenidoId = await obtenerAlumnoPorId(alumnoIdContext)            
-
             setAlumnoId([alumnoObtenidoId])            
          }catch(error){
              throw error
