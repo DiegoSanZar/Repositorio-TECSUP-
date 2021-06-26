@@ -68,8 +68,8 @@ function SideBar(){
                 </Link>
             </li>
             <li>
-                <Link to="/registro" className={`${evaluateActiveLink("registro") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("registro")}}>                
+                <Link to="/mostrarAlumno" className={`${evaluateActiveLink("mostrarAlumno") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("mostrarAlumno")}}>                
                 Mis datos
                 </Link>
             </li>
