@@ -9,6 +9,7 @@ import CalendarioAlumno from "./views/CalendarioAlumnoView"
 import IntranetAlumno from './views/LoggeoMenuView'
 import TareasMenu from './views/TareasAlumnoView'
 import AsistenciaAlumno from './views/AsistenciaAlumnoView'
+import MostrarAlumnoView from './views/MostrarAlumnoView'
 
 
 function Routes() {
@@ -22,6 +23,7 @@ function Routes() {
             <Route path="/intranet" exact component={IntranetAlumno} />
             <Route path="/tareas" exact component={TareasMenu} />
             <Route path="/asistencia" exact component={AsistenciaAlumno} />
+            <Route path="/mostrarAlumno" exact component={MostrarAlumnoView} />
 
         </div>
     )
