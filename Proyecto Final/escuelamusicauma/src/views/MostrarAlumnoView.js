@@ -7,7 +7,7 @@ function MostrarAlumnoView() {
 
     const getAlumnoId = async() =>{
         try{
-            let alumnoObtenidoId = await obtenerAlumnoPorId(1)
+            let alumnoObtenidoId = await obtenerAlumnoPorId()
             console.log(alumnoObtenidoId)
             setAlumnoId(alumnoObtenidoId)
             console.log(alumnoId)
@@ -34,15 +34,15 @@ function MostrarAlumnoView() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {alumnoId.map((alumnId, d) =>(
+                    {alumnoId.map((alumnd, d) =>(
                         <tr key={d}>
-                            <td>{alumnId.nombre}</td>
-                            <td>{alumnId.apellidoPaterno}</td>
-                            <td>{alumnId.apellidoMaterno}</td>
-                            <td>{alumnId.email}</td>
-                            <td>{alumnId.fechaRegistro}</td>
+                            <td>{alumnd.nombre}</td>
+                            <td>{alumnd.apellidoPaterno}</td>
+                            <td>{alumnd.apellidoMaterno}</td>
+                            <td>{alumnd.email}</td>
+                            <td>{alumnd.fechaRegistro}</td>
                         </tr>
-                    ))} */}
+                    ))}
                 </tbody>
             </table>
         </div>
