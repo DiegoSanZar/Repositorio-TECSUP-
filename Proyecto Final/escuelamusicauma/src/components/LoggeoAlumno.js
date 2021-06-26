@@ -2,7 +2,7 @@ import React from 'react'
 import "../LoggeoAlumno.css";
 
 
-function LoggeoAlumno({manejarSubmit}) {
+function LoggeoAlumno({value,actualizarCredenciales,manejarSubmit}) {
 
 
     return (
@@ -13,16 +13,20 @@ function LoggeoAlumno({manejarSubmit}) {
                     onSubmit={(e) => {manejarSubmit(e)}}
                     >
                         <div className="form-floating">
-                            <label className="form-label">Usuario:</label>
                             <input
                                 type="text"
+                                placeholder="Usuario"
+                                value={value.contrasenia}
+                                onChange={(e)=>{actualizarCredenciales(e)}}                                
                                 className="form-control"
                                 />
                         </div>
-                        <div className="form-floating">
-                            <label className="form-label">Contraseña:</label>
+                        <div className="form-floating">                            
                             <input
                                 type="password"
+                                placeholder="Contraseña"
+                                value={value.nombreUsuario}
+                                onChange={(e)=>{actualizarCredenciales(e)}}
                                 className="form-control"
                                 />
                         </div>

@@ -1,11 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react'
 import LoggeoAlumno from "../components/LoggeoAlumno"
 import {useHistory} from "react-router-dom"
 import {loggingUsuario} from "../services/usuarioService"
+import Swal from 'sweetalert2'
 
 function LoggeoView() {
     
     const history = useHistory()
+
+    const [credenciales, setCredenciales] = useState({
+      nombreUsuario:'',
+      contrasenia:''
+    })
+
+   const actualizarCredenciales = (e) => {
+      setCredenciales({
+          ...credenciales,
+          [e.target.name]: e.target.value
+      })
+   }
+
+
+
 
     const manejarSubmit = async (e) => {
       e.preventDefault()
@@ -29,7 +45,7 @@ function LoggeoView() {
 
     return (
         <div>
-            <LoggeoAlumno manejarSubmit={manejarSubmit} />
+            <LoggeoAlumno value={credenciales} actualizarCredenciales={actualizarCredenciales} manejarSubmit={manejarSubmit} />
         </div>
     )
 }
