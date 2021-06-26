@@ -6,7 +6,9 @@ const obtenerTareaPorAlumno = async(alumnoId) => {
     try{
         let {data} = await axios.get(URL)
         console.log(data);
-        return data
+        return data.filter((tarea)=>{
+            return tarea.alumnoId === alumnoId
+        });        
     }catch(error){
         console.log(error)
     }
