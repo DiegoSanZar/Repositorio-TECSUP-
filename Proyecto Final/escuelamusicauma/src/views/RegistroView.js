@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import RegistroAlumno from "../components/RegistroAlumno"
-import SideBar from "../components/SideBar"
+import SideBarAdmin from '../components/SideBarAdmin'
 import {useHistory} from "react-router-dom"
 import { creaAlumno } from '../services/alumnoService'
 import Swal from 'sweetalert2'
@@ -47,8 +47,8 @@ function RegistroView() {
         }
     }
     return (
-        <div className="d-flex flex-row">
-            <SideBar></SideBar>   
+        <div className="d-flex flex-row"> 
+             <SideBarAdmin></SideBarAdmin> 
             <RegistroAlumno value={value} actualizarInput={actualizarImput} setValue={setValue} manejarSubmit={manejarSubmit}></RegistroAlumno>
         </div>
     )

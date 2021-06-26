@@ -62,7 +62,7 @@ function SideBarAdmin(){
                 </Link>
             </li>
             <li>
-                <Link to="/registroAlumno" className={`${evaluateActiveLink("registroAlumno") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                <Link to="/registro" className={`${evaluateActiveLink("registroAlumno") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
                 onClick={()=> {actualizarActiveLink("registroAlumno")}}>                
                 Registro de Alumnos
                 </Link>
