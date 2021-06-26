@@ -4,22 +4,22 @@ import { obtenerAlumnoPorId } from '../services/alumnoService'
 
 function MostrarAlumno() {
 
-    const[alumnoId, setAlumnoId] = useState([])
+    const[alumno, setAlumnoId] = useState([])
 
     const getAlumnoId = async() =>{
         try{
             let alumnoObtenidoId = await obtenerAlumnoPorId(1)
             console.log(alumnoObtenidoId)
             setAlumnoId(alumnoObtenidoId)
-            console.log(alumnoId)
+            console.log(alumno)
          }catch(error){
              throw error
          }
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         getAlumnoId()
-    }, [])
+    },[alumno])
 
     return (
         <div>
@@ -35,15 +35,15 @@ function MostrarAlumno() {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* {alumnoId.map((alumnId) =>(
-                        <tr>
+                     {alumno[0].map((alumnId,i) =>(
+                        <tr key={i}>
                             <td>{alumnId.nombre}</td>
                             <td>{alumnId.apellidoPaterno}</td>
                             <td>{alumnId.apellidoMaterno}</td>
                             <td>{alumnId.email}</td>
                             <td>{alumnId.fechaRegistro}</td>
                         </tr>
-                    ))} */}
+                    ))} 
                 </tbody>
             </table>
         </div>

@@ -27,7 +27,8 @@ function LoggeoView() {
       e.preventDefault()
 
       try {
-         let alumnoObtenido = await loggingUsuario("admin","admin") 
+         let alumnoObtenido = await loggingUsuario(credenciales.nombreUsuario,
+          credenciales.contrasenia) 
          
          if(alumnoObtenido != null) {
           console.log(alumnoObtenido);
