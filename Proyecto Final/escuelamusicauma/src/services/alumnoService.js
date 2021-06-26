@@ -15,6 +15,7 @@ const creaAlumno  = async (nuevoAlumno) => {
 const obtenerAlumnoPorId = async(id) => {
     try{
         let {data} = await axios.get(`${URL}/${id}`)
+        console.log(data)
         return data
     }catch(error){
         console.log(error)
