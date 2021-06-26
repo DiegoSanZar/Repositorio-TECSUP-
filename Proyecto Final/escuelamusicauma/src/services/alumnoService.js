@@ -49,7 +49,7 @@ const loggingAlumno = async(usuario, contrasenia) => {
     try{
         const alumnosObtenidos = obtenerAlumnos()
         alumnosObtenidos.filter((alumno)=>{
-            return alumno.usuario == usuario && alumno.contrasenia == contrasenia
+            return alumno.usuario === usuario && alumno.contrasenia === contrasenia
         })
         return alumnosObtenidos
     }catch(error){

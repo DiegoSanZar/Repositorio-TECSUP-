@@ -7,7 +7,7 @@ function OfferingsMainPAge(){
     <div className="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div className="col">
         <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
+        <div className="card-header py-3 text-white bg-primary border-primary">
         <h2 className="card-title pricing-card-title"><small className="fw-light">Misión</small></h2>
 
           </div>            
@@ -21,7 +21,7 @@ function OfferingsMainPAge(){
 
       <div className="col">
         <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
+        <div className="card-header py-3 text-white bg-primary border-primary">
             <h2 className="card-title pricing-card-title"><small className="fw-light">Visión</small></h2>
           </div>            
           <div className="card-body mt-3 mb-4">
@@ -34,11 +34,11 @@ function OfferingsMainPAge(){
 
       <div className="col">
         <div className="card mb-4 rounded-3 shadow-sm border-primary">
-        <div class="card-header py-3 text-white bg-primary border-primary">
+        <div className="card-header py-3 text-white bg-primary border-primary">
             <h2 className="card-title pricing-card-title"><small className="fw-light">Valores institucionales</small></h2>
           </div>            
           <div className="card-body">
-            <ul class="list-unstyled">
+            <ul className="list-unstyled">
                 <li>Gratitud</li>
                 <li>Honestidad</li>
                 <li>Humildad</li>

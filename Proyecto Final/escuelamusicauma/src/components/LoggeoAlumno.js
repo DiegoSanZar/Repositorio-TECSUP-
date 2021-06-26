@@ -1,5 +1,4 @@
 import React from 'react'
-import loggingAlumno from "../services/alumnoService"
 import "../LoggeoAlumno.css";
 
 
@@ -27,11 +26,11 @@ function LoggeoAlumno({manejarSubmit}) {
                                 className="form-control"
                                 />
                         </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+                        <button className="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
                     </form>
                 <hr/>
                 <span style={{color:'blue'}}>Olvide mi contraseña</span>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+                <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
             </main>
         </div>
     )
