@@ -4,6 +4,7 @@ import SideBar from "../components/SideBar"
 import {useHistory} from "react-router-dom"
 import { creaAlumno } from '../services/alumnoService'
 import Swal from 'sweetalert2'
+
  
 function RegistroView() {
     const [value, setValue] = useState({
