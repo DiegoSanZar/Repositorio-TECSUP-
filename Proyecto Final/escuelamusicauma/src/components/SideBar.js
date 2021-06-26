@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import {useHistory} from "react-router-dom";
 import React, { useContext } from "react";
 import { sideBarContext } from "../context/sideBarContext";
+import { AuthContext } from "../context/AuthContext";
 
 
 
@@ -14,6 +15,9 @@ function SideBar(){
     const history = useHistory()
     let { sideBarActive } = useContext(sideBarContext);
     let { actualizarActiveLink } = useContext(sideBarContext);
+    
+    let { actualizarAuth } = useContext(AuthContext);
+    let { actualizarAlumnoId } = useContext(AuthContext);
 
 
     const evaluateActiveLink = (actual) => {
@@ -36,6 +40,8 @@ function SideBar(){
                 denyButtonText: `No`,
                 }).then((result) => {                
                 if (result.isConfirmed) {
+                    actualizarAuth(false)
+                    actualizarAlumnoId("")                    
                     history.push('/')
                 }
                 })
@@ -55,8 +61,8 @@ function SideBar(){
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item">
-                <Link to="/intranet" className={`${evaluateActiveLink("intranet") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
-                onClick={()=> {actualizarActiveLink("intranet")}}
+                <Link to="/intranetAlumno" className={`${evaluateActiveLink("intranetAlumno") ? 'nav-link link-dark active':'nav-link link-dark'}`} 
+                onClick={()=> {actualizarActiveLink("intranetAlumno")}}
                 >                
                 Inicio
                 </Link>

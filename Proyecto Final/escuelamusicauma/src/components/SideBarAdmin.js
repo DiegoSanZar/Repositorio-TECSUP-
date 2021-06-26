@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import {useHistory} from "react-router-dom";
 import React, { useContext } from "react";
 import { sideBarAdminContext } from "../context/sideBarAdminContext";
+import { AuthContext } from "../context/AuthContext";
 
 
 
@@ -14,6 +15,9 @@ function SideBarAdmin(){
     const history = useHistory()
     let { sideBarAdminActive } = useContext(sideBarAdminContext);
     let { actualizarActiveLink } = useContext(sideBarAdminContext);
+
+    let { actualizarAuth } = useContext(AuthContext);
+    let { actualizarAlumnoId } = useContext(AuthContext);    
 
 
     const evaluateActiveLink = (actual) => {
@@ -36,6 +40,8 @@ function SideBarAdmin(){
                 denyButtonText: `No`,
                 }).then((result) => {                
                 if (result.isConfirmed) {
+                    actualizarAuth(false)
+                    actualizarAlumnoId("")                      
                     history.push('/')
                 }
                 })

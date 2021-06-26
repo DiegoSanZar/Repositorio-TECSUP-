@@ -6,8 +6,8 @@ function ContactenosDetail () {
 
   return (
     
-  <main>
-
+  <div className="container">
+    
       <div className="b-example-divider"></div>
 
       <div className="px-4 pt-5 my-5 text-center border-bottom">
@@ -44,7 +44,7 @@ function ContactenosDetail () {
       </div>
 
 
-    </main>
+    </div>
   )
 
 }
