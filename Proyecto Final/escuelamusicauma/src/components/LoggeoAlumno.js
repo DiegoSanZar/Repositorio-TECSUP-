@@ -13,22 +13,24 @@ function LoggeoAlumno({value,actualizarCredenciales,manejarSubmit}) {
                     onSubmit={(e) => {manejarSubmit(e)}}
                     >
                         <div className="form-floating">
-                            <input
-                                type="text"
-                                placeholder="Usuario"
-                                value={value.contrasenia}
-                                onChange={(e)=>{actualizarCredenciales(e)}}                                
-                                className="form-control"
-                                />
+                        <label className="form-label">Usuario:</label>
+                        <input
+                            type="text"
+                            placeholder="Usuario"
+                            name="nombreUsuario"                                
+                            onChange={(e)=>{actualizarCredenciales(e)}}                                
+                            className="form-control pt-5"
+                            />
                         </div>
-                        <div className="form-floating">                            
-                            <input
-                                type="password"
-                                placeholder="Contraseña"
-                                value={value.nombreUsuario}
-                                onChange={(e)=>{actualizarCredenciales(e)}}
-                                className="form-control"
-                                />
+                        <div className="form-floating">     
+                        <label className="form-label">Contraseña:</label>                       
+                        <input
+                            type="password"
+                            placeholder="Contraseña"
+                            name="contrasenia"       
+                            onChange={(e)=>{actualizarCredenciales(e)}}
+                            className="form-control pt-5"
+                            />
                         </div>
                         <button className="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
                     </form>

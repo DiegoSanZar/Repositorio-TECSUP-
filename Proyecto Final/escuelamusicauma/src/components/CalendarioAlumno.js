@@ -1,12 +1,25 @@
-
-
+import React,{useContext,useState} from 'react'
+import { AuthContext } from "../context/AuthContext";
+import { format, subHours, startOfMonth } from 'date-fns';
+import {
+  MonthlyBody,
+  MonthlyDay,
+  MonthlyCalendar,
+  MonthlyNav,
+  DefaultMonthlyEventItem,
+} from '@zach.codes/react-calendar';
 
 function CalendarioAlumno(){
+    let [currentMonth, setCurrentMonth] = useState<Date>(
+        startOfMonth(new Date())
+      );
 
+    let { alumnoIdContext } = useContext(AuthContext);    
 
     return(
         <div className="container">
 
+         <h1>hola {alumnoIdContext}</h1>   
         <div className="calendar  p-5">
             <div className="d-flex align-items-center"><i className="fa fa-calendar fa-3x mr-3"></i>
             <h2 className="month font-weight-bold m-2 text-uppercase">Junio 2021</h2>
